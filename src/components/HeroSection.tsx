@@ -1,4 +1,38 @@
 import { useEffect, useRef, useState } from "react";
+
+// Typing animation hook (must be top-level)
+import { useEffect as useEffectReact, useState as useStateReact } from "react";
+function useTypingEffect(text, speed = 60, delay = 400) {
+  const [displayed, setDisplayed] = useStateReact("");
+  useEffectReact(() => {
+    let timeout;
+    let idx = 0;
+    setDisplayed("");
+    const start = () => {
+      timeout = setTimeout(function type() {
+        setDisplayed((prev) => prev + text[idx]);
+        idx++;
+        if (idx < text.length) {
+          timeout = setTimeout(type, speed);
+        }
+      }, delay);
+    };
+    start();
+    return () => clearTimeout(timeout);
+  }, [text, speed, delay]);
+  return displayed;
+}
+
+// TypingText component for the animated line (must be top-level)
+function TypingText({ text }) {
+  const typed = useTypingEffect(text, 60, 400);
+  return (
+    <span>
+      {typed}
+      <span className="inline-block w-2 h-6 align-middle animate-blink bg-foreground/80 ml-0.5 rounded-sm" style={{verticalAlign: '2px'}} />
+    </span>
+  );
+}
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -76,11 +110,16 @@ const HeroSection = () => {
             National Innovation Platform — Now Live
           </div>
 
+
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-display font-bold leading-tight tracking-tight mb-6">
             Empowering Innovation
             <br />
-            <span className="gradient-text">Across the Nation</span>
+            <span className="gradient-text">
+              Across the Nation
+            </span>
           </h1>
+
+
 
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
             Manage, Participate, and Judge Hackathons Seamlessly — a unified platform for students, organizers, mentors, judges, and administrators.

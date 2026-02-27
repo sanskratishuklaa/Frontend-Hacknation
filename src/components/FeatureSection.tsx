@@ -1,13 +1,15 @@
 import { motion } from "framer-motion";
-import { Search, Users, Upload, BarChart3, Trophy, Award } from "lucide-react";
+import { Search, Users, Upload, BarChart3, Trophy, Award, Brain, Dna } from "lucide-react";
 
 const features = [
-  { icon: Search, title: "Discover Hackathons", description: "Browse and filter hackathons by theme, location, skill level, and prizes." },
-  { icon: Users, title: "Team Formation", description: "Find teammates with complementary skills using our intelligent matching system." },
-  { icon: Upload, title: "Project Submission", description: "Submit projects with demos, repos, and documentation in a streamlined portal." },
-  { icon: BarChart3, title: "Judge Evaluation", description: "Structured rubric-based scoring with real-time evaluation dashboards." },
-  { icon: Trophy, title: "Live Leaderboard", description: "Track rankings in real-time with animated leaderboards and score breakdowns." },
-  { icon: Award, title: "Certificates & Results", description: "Auto-generated certificates and detailed result analytics for all participants." },
+  { id: "discover-hackathons", icon: Search, title: "Discover Hackathons", description: "Browse and filter hackathons by theme, location, skill level, and prizes." },
+  { id: "team-formation", icon: Users, title: "Team Formation", description: "Find teammates with complementary skills using our intelligent matching system." },
+  { id: "project-submission", icon: Upload, title: "Project Submission", description: "Submit projects with demos, repos, and documentation in a streamlined portal." },
+  { id: "judge-evaluation", icon: BarChart3, title: "Judge Evaluation", description: "Structured rubric-based scoring with real-time evaluation dashboards." },
+  { id: "judge-fatigue", icon: Brain, title: "Judge Fatigue Monitor", description: "Detect scoring fatigue with AI-driven variance alerts and recommend fair-break windows." },
+  { id: "hack-dna", icon: Dna, title: "Hack DNA System", description: "Analyze team behavior, build style, and innovation signals to surface each project's DNA profile." },
+  { id: "live-leaderboard", icon: Trophy, title: "Live Leaderboard", description: "Track rankings in real-time with animated leaderboards and score breakdowns." },
+  { id: "certificates-results", icon: Award, title: "Certificates & Results", description: "Auto-generated certificates and detailed result analytics for all participants." },
 ];
 
 const container = {
@@ -50,6 +52,7 @@ const FeatureSection = () => {
           {features.map((feature) => (
             <motion.div
               key={feature.title}
+              id={feature.id}
               variants={item}
               className="group glass-card-hover p-6 rounded-xl cursor-pointer"
             >

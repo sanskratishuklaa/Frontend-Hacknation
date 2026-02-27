@@ -52,6 +52,61 @@
     --sidebar-border: 222 20% 18%;
     --sidebar-ring: 190 100% 50%;
   }
+
+  :root[data-theme='cosmic'] {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 96%;
+    --card: 222 40% 10%;
+    --primary: 190 100% 50%;
+    --secondary: 263 70% 58%;
+    --muted: 222 30% 14%;
+    --border: 222 20% 18%;
+    --ring: 190 100% 50%;
+  }
+
+  :root[data-theme='aurora'] {
+    --background: 162 54% 7%;
+    --foreground: 151 33% 96%;
+    --card: 162 40% 11%;
+    --primary: 165 100% 42%;
+    --secondary: 185 85% 45%;
+    --muted: 162 30% 15%;
+    --border: 162 18% 24%;
+    --ring: 165 100% 42%;
+  }
+
+  :root[data-theme='sunset'] {
+    --background: 266 40% 8%;
+    --foreground: 30 100% 96%;
+    --card: 266 35% 12%;
+    --primary: 24 100% 60%;
+    --secondary: 321 83% 60%;
+    --muted: 266 22% 16%;
+    --border: 266 20% 23%;
+    --ring: 24 100% 60%;
+  }
+
+  :root[data-theme='oceanic'] {
+    --background: 206 52% 8%;
+    --foreground: 195 40% 96%;
+    --card: 206 42% 12%;
+    --primary: 190 95% 52%;
+    --secondary: 212 96% 62%;
+    --muted: 206 28% 16%;
+    --border: 206 20% 24%;
+    --ring: 190 95% 52%;
+  }
+
+  :root[data-theme='graphite'] {
+    --background: 220 10% 10%;
+    --foreground: 220 12% 95%;
+    --card: 220 10% 14%;
+    --primary: 210 70% 70%;
+    --secondary: 220 9% 55%;
+    --muted: 220 10% 18%;
+    --border: 220 8% 26%;
+    --ring: 210 70% 70%;
+  }
 }
 
 @layer base {
